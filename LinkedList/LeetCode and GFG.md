@@ -1,5 +1,7 @@
 
-- 237 , 876 , Middle element GFG practice , 2095 delete middle element , Delete middle element GFG Practice , 19 , Delete element from the last , Kth from End of Linked List GFG practice , intersection of two LinkedList GFG practice , 160 ,  1721 (swap the LinkedList element) ,  141(cycle LinkedList - fast and slow pointer) , same GFG practice ,  83 remove duplicate node in a sorted LinkedList , Merge two sorted linkedList , 148 , 
+- 237 , 876 , Middle element GFG practice , 2095 delete middle element , Delete middle element GFG Practice , 19 , Delete element from the last , Kth from End of Linked List GFG practice , intersection of two LinkedList GFG practice , 160 ,  1721 (swap the LinkedList element) ,  141(cycle LinkedList - fast and slow pointer) , same GFG practice ,  82 ,83 remove duplicate node in a sorted LinkedList , Merge two sorted linkedList , 148 , Merge sort on linkedList gfg practice , 86 partition of the linkedList , rotate a LinkedList GFG Practice , 2 add two numbers ,
+  
+
 ## 237
 ```java 
 class Solution {
@@ -29,12 +31,15 @@ class Solution {
 
 1721
 ![[Pasted image 20260206235106.png]]
+
 83
 ![[Pasted image 20260207163026.png]]
+
 82
 Delete all the duplicate node and return the unique nodes
  - [Method] - you can create a dummy node and then use two pointers to check for the value of Current node and next to the Current node if they are same then move the step pointer util you find a situation where step pointer value and base pointer value don't match then  you can set the next pointer of dummy node to that node at which next pointer points  to   
 ![[Pasted image 20260207171822.png]]
+
 21 
 ![[Pasted image 20260207231605.png]]
 - you have to take i and j pointer to both lists and a dummy node to store the find node adresss
@@ -73,3 +78,26 @@ class Solution {
     }
 }
 ```
+
+## Rotate a Linked List 
+- first went till the last node then according to k value Increament in both temp and head then after everything put temp.next == null so that you break the link between head and temp 
+![[Pasted image 20260208142235.png]]
+```java
+//rotated a LinekdList Gfg practice
+// but time complexity k*0(n)
+ for(int i =1;i<=k;i++){
+             Node t = head;
+             while(t.next!=null){
+                 if(t.next.next==null){
+                     t = t.next;
+                 }
+                 else{
+                 t = t.next;
+                 }
+             }
+             t.next = head;
+             head = head.next;
+             t.next.next = null;
+        }
+```
+
